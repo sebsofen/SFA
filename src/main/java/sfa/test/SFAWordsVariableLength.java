@@ -1,15 +1,15 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package main.java.sfa.test;
+package sfa.test;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import main.java.sfa.timeseries.TimeSeries;
-import main.java.sfa.timeseries.TimeSeriesLoader;
-import main.java.sfa.transformation.SFA;
-import main.java.sfa.transformation.SFA.HistogramType;
+import sfa.timeseries.TimeSeries;
+import sfa.timeseries.TimeSeriesLoader;
+import sfa.transformation.SFA;
+import sfa.transformation.SFA.HistogramType;
 
 /**
  * Performs a 1-NN search
