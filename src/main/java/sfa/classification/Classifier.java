@@ -1,6 +1,6 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.classification;
+package main.java.sfa.classification;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +14,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import sfa.timeseries.TimeSeries;
-import sfa.timeseries.TimeSeriesLoader;
+import main.java.sfa.timeseries.TimeSeries;
+import main.java.sfa.timeseries.TimeSeriesLoader;
 
 import com.carrotsearch.hppc.FloatContainer;
 import com.carrotsearch.hppc.IntArrayDeque;

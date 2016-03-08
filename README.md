@@ -50,7 +50,7 @@ First, train the SFA quantization using a set of samples.
 TimeSeries[] train = TimeSeriesLoader.loadDatset(new File("./datasets/CBF/CBF_TEST"));
 
 // Train the SFA representation
-short[][] wordsTrain = sfa.fitTransform(train, wordLength, symbols);
+short[][] wordsTrain = main.java.sfa.fitTransform(train, wordLength, symbols);
 ```
 
 Next, transform a time series using the trained quantization bins.
@@ -60,10 +60,10 @@ Next, transform a time series using the trained quantization bins.
 TimeSeries ts = ...;
 
 // DFT approximation of the time series
-double[] dftTs = sfa.transformation.transform(ts, ts.getLength(), wordLength);
+double[] dftTs = main.java.sfa.transformation.transform(ts, ts.getLength(), wordLength);
 
 // SFA quantization to an SFA word
-short[] wordTs = sfa.quantization(dftTs);
+short[] wordTs = main.java.sfa.quantization(dftTs);
 ```
 
 Similarity search using the SFA distance.
@@ -162,15 +162,15 @@ There are 5 implemented use cases:
 
 
 
-1. Classification accuracy of BOSS VS and BOSS ensemble on the UCR datasets: [UCRClassification.java](https://github.com/patrickzib/SFA/blob/master/src/sfa/test/UCRClassification.java)
+1. Classification accuracy of BOSS VS and BOSS ensemble on the UCR datasets: [UCRClassification.java](https://github.com/patrickzib/SFA/blob/master/src/main.java.sfa/test/UCRClassification.java)
 2. SFA lower bounding distance to the Euclidean distance: 
-[SFAMinDistance.java](https://github.com/patrickzib/SFA/blob/master/src/sfa/test/SFAMinDistance.java)
+[SFAMinDistance.java](https://github.com/patrickzib/SFA/blob/master/src/main.java.sfa/test/SFAMinDistance.java)
 3. Generate SFA words from a set of samples: 
-[SFAWords.java](https://github.com/patrickzib/SFA/blob/master/src/sfa/test/SFAWords.java)
+[SFAWords.java](https://github.com/patrickzib/SFA/blob/master/src/main.java.sfa/test/SFAWords.java)
 4. SFA makes use of variable word lengths: 
-[SFAWordsVariableLength.java](https://github.com/patrickzib/SFA/blob/master/src/sfa/test/SFAWordsVariableLength.java)
+[SFAWordsVariableLength.java](https://github.com/patrickzib/SFA/blob/master/src/main.java.sfa/test/SFAWordsVariableLength.java)
 5. Extract sliding windows from a time series and transform each sliding window to its SFA word: 
-[SFAWordsWindowing.java](https://github.com/patrickzib/SFA/blob/master/src/sfa/test/SFAWordsWindowing.java)
+[SFAWordsWindowing.java](https://github.com/patrickzib/SFA/blob/master/src/main.java.sfa/test/SFAWordsWindowing.java)
 
 # References & Acknowledgements
 

@@ -1,16 +1,16 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.test;
+package main.java.sfa.test;
 
 import java.io.File;
 import java.io.IOException;
 
-import sfa.classification.BOSSEnsembleClassifier;
-import sfa.classification.BOSSVSClassifier;
-import sfa.classification.Classifier;
-import sfa.classification.ParallelFor;
-import sfa.timeseries.TimeSeries;
-import sfa.timeseries.TimeSeriesLoader;
+import main.java.sfa.classification.BOSSEnsembleClassifier;
+import main.java.sfa.classification.BOSSVSClassifier;
+import main.java.sfa.classification.Classifier;
+import main.java.sfa.classification.ParallelFor;
+import main.java.sfa.timeseries.TimeSeries;
+import main.java.sfa.timeseries.TimeSeriesLoader;
 
 public class UCRClassification {
 

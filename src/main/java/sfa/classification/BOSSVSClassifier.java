@@ -1,6 +1,6 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.classification;
+package main.java.sfa.classification;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,9 +12,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import sfa.timeseries.TimeSeries;
-import sfa.transformation.BOSSModel.BagOfPattern;
-import sfa.transformation.BOSSVSModel;
+import main.java.sfa.timeseries.TimeSeries;
+import main.java.sfa.transformation.BOSSModel.BagOfPattern;
+import main.java.sfa.transformation.BOSSVSModel;
 
 import com.carrotsearch.hppc.IntFloatOpenHashMap;
 import com.carrotsearch.hppc.ObjectObjectOpenHashMap;

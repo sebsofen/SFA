@@ -1,25 +1,26 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.test;
+package main.java.sfa.test;
 
 import java.io.File;
 import java.io.IOException;
 
-import sfa.timeseries.TimeSeries;
-import sfa.timeseries.TimeSeriesLoader;
-import sfa.transformation.SFA;
-import sfa.transformation.SFA.HistogramType;
+import main.java.sfa.timeseries.TimeSeries;
+import main.java.sfa.timeseries.TimeSeriesLoader;
+import main.java.sfa.transformation.SFA;
+import main.java.sfa.transformation.SFA.HistogramType;
 
 /**
  * Performs a 1-NN search
  *
  */
-public class SFAWords {
+public class SFAWordsWindowing {
   
   public static void main(String[] argv) throws IOException {
     
-    int symbols = 8;
-    int wordLength = 16;
+    int symbols = 4;
+    int wordLength = 4;
+    int windowLength = 64;
     boolean normMean = true;
     
     SFA sfa = new SFA(HistogramType.EQUI_DEPTH, normMean);    
@@ -29,15 +30,19 @@ public class SFAWords {
     TimeSeries[] test = TimeSeriesLoader.loadDatset(new File("./datasets/CBF/CBF_TEST"));
     
     // train SFA representation
-    sfa.fitTransform(train, wordLength, symbols);
+    sfa.fitWindowing(train, windowLength, wordLength, symbols, normMean);
    
     // bins
     sfa.printBins();
     
     // transform
     for (int q = 0; q < test.length; q++) {
-      short[] wordQuery = sfa.transform(test[q]);      
-      System.out.println("Time Series " + q + "\t" + toSfaWord(wordQuery));      
+      short[][] wordsQuery = sfa.transformWindowing(test[q], windowLength, wordLength);    
+      System.out.print("Time Series " + q + "\t");
+      for (short[] word : wordsQuery) {
+        System.out.print(toSfaWord(word) + ";");
+      }
+      System.out.println("");
     }
   }
   

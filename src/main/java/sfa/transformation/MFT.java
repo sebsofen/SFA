@@ -1,10 +1,10 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.transformation;
+package main.java.sfa.transformation;
 
 import java.util.Arrays;
 
-import sfa.timeseries.TimeSeries;
+import main.java.sfa.timeseries.TimeSeries;
 
 /**
  * The Momentary Fourier Transform is alternative algorithm of

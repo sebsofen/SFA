@@ -1,6 +1,6 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.classification;
+package main.java.sfa.classification;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

@@ -1,21 +1,20 @@
 // Copyright (c) 2016 - Patrick Schäfer (patrick.schaefer@zib.de)
 // Distributed under the GLP 3.0 (See accompanying file LICENSE)
-package sfa.test;
+package main.java.sfa.test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
-import sfa.timeseries.TimeSeries;
-import sfa.timeseries.TimeSeriesLoader;
-import sfa.transformation.SFA;
-import sfa.transformation.SFA.HistogramType;
+import main.java.sfa.timeseries.TimeSeries;
+import main.java.sfa.timeseries.TimeSeriesLoader;
+import main.java.sfa.transformation.SFA;
+import main.java.sfa.transformation.SFA.HistogramType;
 
 /**
  * Performs a 1-NN search
  *
  */
-public class SFAWordsVariableLength {
+public class SFAWords {
   
   public static void main(String[] argv) throws IOException {
     
@@ -29,20 +28,16 @@ public class SFAWordsVariableLength {
     TimeSeries[] train = TimeSeriesLoader.loadDatset(new File("./datasets/CBF/CBF_TRAIN"));
     TimeSeries[] test = TimeSeriesLoader.loadDatset(new File("./datasets/CBF/CBF_TEST"));
     
-    // train SFA representation using wordLength
+    // train SFA representation
     sfa.fitTransform(train, wordLength, symbols);
    
     // bins
     sfa.printBins();
     
-    // transform 
+    // transform
     for (int q = 0; q < test.length; q++) {
       short[] wordQuery = sfa.transform(test[q]);      
-      
-      // iterate variable lengths
-      for (int length = 4; length <= wordLength; length*=2) {
-        System.out.println("Time Series " + q + "\t" + length + "\t" + toSfaWord(Arrays.copyOf(wordQuery, length)));
-      }
+      System.out.println("Time Series " + q + "\t" + toSfaWord(wordQuery));      
     }
   }
   
